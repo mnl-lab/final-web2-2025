@@ -1,0 +1,30 @@
+fetch everything:
+    const res = await fetch("");
+    data.value = res.json();
+
+fetch something by id:
+    const res = await fetch(".../id");
+    data.value = await res.json();
+
+add something to db:
+    await fetch("",{
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(data) //data should be an object, id don't need to be added it's automaticaly sorted out
+    });
+
+edit something in db:
+    await fetch("", {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'json/application'
+        },
+        body: JSON.stringify(changedObject)
+    });
+
+delete something:
+    await fetch(".../id", {
+        method: 'DELETE'
+    });
